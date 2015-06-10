@@ -1,0 +1,4 @@
+services:
+#    music_admin.example:
+#        class: Music\AdminBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,28 @@
+{% extends 'MusicMainBundle::layout.html.twig' %}
+
+{% block center %}
+    <div class="count">
+        <p>Всего найдено: {{ pagination.getTotalItemCount }}</p>
+    </div>
+    <div id="separator"></div>
+    {% for entity in pagination %}
+        <div class="music_box">
+            <p class="group_name">
+                {{ entity.groupname|title }}
+            </p>
+            <p class="track_name">
+                {{ entity.trackname|title }}
+            </p>
+            <p class="player">
+            <audio controls>
+                <source src="{{ asset('files') }}/{{ entity.filepsevdo }}" type="audio/mpeg" >
+                Аудио не поддерживается
+            </audio>
+            </p>
+            <a class="download" href="/download/{{ entity.filepsevdo }}/{{ entity.filename }}">Скачать</a>
+        </div>
+    {% endfor %}
+    <div class="pagination">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}

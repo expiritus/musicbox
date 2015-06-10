@@ -1,0 +1,12 @@
+admin_homepage:
+    resource: "@MusicAdminBundle/Resources/config/routing/index.yml"
+    prefix:   /admin
+
+admin_category:
+    resource: "@MusicAdminBundle/Resources/config/routing/category.yml"
+    prefix:   /admin/category
+
+admin_albums:
+    resource: "@MusicAdminBundle/Resources/config/routing/albums.yml"
+    prefix:   /admin/albums
+

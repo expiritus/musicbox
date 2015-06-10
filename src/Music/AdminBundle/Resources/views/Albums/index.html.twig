@@ -1,0 +1,62 @@
+{% extends 'MusicAdminBundle::layout.html.twig' %}
+
+{% block body -%}
+    <a href="{{ path('admin_homepage') }}"><< Back</a>
+    <h1>Albums list</h1>
+    {{ form(form) }}
+
+    <ul>
+        <li><a href="{{ path('admin_albums') }}">Show all</a> </li>
+        <li>
+            <a href="{{ path('admin_albums_new') }}">
+                Create a new track
+            </a>
+        </li>
+    </ul>
+
+    <div class="count">
+        <p>Всего найдено: {{ pagination.getTotalItemCount }}</p>
+    </div>
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Group_name</th>
+                <th>Track_name</th>
+                <th>File_name</th>
+                <th>File_psevdo</th>
+                <th>Category_id</th>
+                <th>Created_at</th>
+                <th>Updated_at</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in pagination %}
+            <tr>
+                <td><a href="{{ path('admin_albums_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.groupname|title }}</td>
+                <td>{{ entity.trackname|title }}</td>
+                <td>{{ entity.filename|title }}</td>
+                <td>{{ entity.filepsevdo }}</td>
+                <td>{{ entity.categoryid }}</td>
+                <td>{% if entity.createdat %}{{ entity.createdat|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.updatedat %}{{ entity.updatedat|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('admin_albums_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_albums_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="pagination">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+    {% endblock %}

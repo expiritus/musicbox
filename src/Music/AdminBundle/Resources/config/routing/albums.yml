@@ -1,0 +1,35 @@
+admin_albums:
+    path:     /
+    defaults: { _controller: "MusicAdminBundle:Albums:index" }
+
+admin_albums_show:
+    path:     /{id}/show
+    defaults: { _controller: "MusicAdminBundle:Albums:show" }
+
+admin_albums_new:
+    path:     /new
+    defaults: { _controller: "MusicAdminBundle:Albums:new" }
+
+admin_albums_create:
+    path:     /create
+    defaults: { _controller: "MusicAdminBundle:Albums:create" }
+    methods:  POST
+
+#admin_albums_search:
+#    path:     /search
+#    defaults: { _controller: "MusicAdminBundle:Albums:search" }
+#    methods:  POST
+
+admin_albums_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MusicAdminBundle:Albums:edit" }
+
+admin_albums_update:
+    path:     /{id}/update
+    defaults: { _controller: "MusicAdminBundle:Albums:update" }
+    methods:  [POST, PUT]
+
+admin_albums_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MusicAdminBundle:Albums:delete" }
+    methods:  [POST, DELETE]

@@ -1,0 +1,8 @@
+music_main:
+    resource: "@MusicMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
+music_admin:
+    resource: "@MusicAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+

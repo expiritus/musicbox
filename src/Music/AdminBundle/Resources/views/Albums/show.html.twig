@@ -1,0 +1,57 @@
+{% extends 'MusicAdminBundle::layout.html.twig' %}
+
+{% block body -%}
+    <a href="{{ path('admin_albums_new') }}"><< Back </a>
+    <h1>Albums</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Group_name</th>
+                <td>{{ entity.groupname }}</td>
+            </tr>
+            <tr>
+                <th>Track_name</th>
+                <td>{{ entity.trackname }}</td>
+            </tr>
+            <tr>
+                <th>File_name</th>
+                <td>{{ entity.filename }}</td>
+            </tr>
+            <tr>
+                <th>File_psevdo</th>
+                <td>{{ entity.filepsevdo }}</td>
+            </tr>
+            <tr>
+                <th>Category_id</th>
+                <td>{{ entity.categoryid }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ entity.createdat|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Updated_at</th>
+                <td>{{ entity.updatedat|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('admin_albums') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('admin_albums_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

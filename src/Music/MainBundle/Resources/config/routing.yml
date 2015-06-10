@@ -1,0 +1,7 @@
+main_homepage:
+    path:     /
+    defaults: { _controller: MusicMainBundle:Default:index }
+
+download_file:
+    path: /download/{psevdo}/{name}
+    defaults: { _controller: MusicMainBundle:Default:download }

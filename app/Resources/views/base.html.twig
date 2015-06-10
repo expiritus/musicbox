@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/main_style.css') }}" type="text/css">
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('js/jquery-1.11.3.min.js') }}" type="text/javascript"></script>
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            {% block head %}{% endblock %}
+        </header>
+        <aside>
+            <div id="left">
+                {% block left %}{% endblock %}
+            </div>
+        </aside>
+        <aside>
+            <div id="right">
+                {% block right %}{% endblock %}
+            </div>
+        </aside>
+        <main>
+            <div id="search">
+                {% block search %}{% endblock %}
+            </div>
+            <div id="center">
+                {% block center %}{% endblock %}
+            </div>
+        </main>
+        <footer>
+            <div class="clear"></div>
+            {% block footer %}{% endblock %}
+        </footer>
+    </body>
+</html>

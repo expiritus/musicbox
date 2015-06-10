@@ -1,0 +1,10 @@
+{% extends 'MusicAdminBundle::layout.html.twig' %}
+
+
+{% block body %}
+    <h1>Admin panel</h1>
+    <ul>
+        <li><a href="{{ path('admin_albums') }}">Management tracks</a></li>
+        <li><a href="{{ path('admin_category') }}">Management category</a></li>
+    </ul>
+{% endblock %}
